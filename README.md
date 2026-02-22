@@ -30,7 +30,7 @@ npm install
 ### 4. Cấu hình Biến Môi Trường (Quan trọng)
 *Lưu ý: File `.env` chứa các khoá bí mật nên đã được định cấu hình bằng `.gitignore` để không push lên GitHub.*
 
-Tạo một file có tên là `.env` ở cấu trúc thư mục gốc của dự án và điền thông tin Supabase của bạn:
+Dự án có sẵn một file `.env.sample`. Bạn hãy copy/đổi tên file này thành `.env` (hoặc tạo một file `.env` mới) ở thư mục gốc của dự án và điền thông tin Supabase của bạn vào:
 ```env
 VITE_SUPABASE_URL=https://your-project-id.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
@@ -43,21 +43,26 @@ npm run dev
 ```
 Trang web sẽ chạy tại `http://localhost:5173`.
 
-## Hướng Dẫn Push Code Lên GitHub Không Kèm File .env
+## Quản Lý Biến Môi Trường Khi Push Code Lên GitHub
 
-File `.env` đã được mặc định thêm vào file `.gitignore` để tránh bị lộ thông tin cấu hình và API key. Tuy nhiên, nếu bạn đã tình cờ commit file `.env` trước đó, bạn có thể gỡ nó ra khỏi lịch sử quản lý của Git bằng chuỗi lệnh (Terminal) dưới đây:
+File `.env` đã được mặc định thêm vào file `.gitignore` để tránh việc vô tình commit các thông tin cấu hình nhạy cảm và API key lên GitHub.
+
+Khi bạn thêm các biến môi trường mới vào dự án (ví dụ biến AI_API_KEY), hãy làm theo các bước sau để đảm bảo người khác (hoặc chính bạn lúc deploy) có thể biết được dự án cần những biến môi trường nào:
+
+1. Thêm khoá bí mật thực sự vào file `.env` (file này sẽ nằm yên ở máy bạn).
+2. Thêm tên biến (bỏ trống giá trị) vào file `.env.sample`.
+3. Khi push code lên GitHub, bạn chỉ cần commit file `.env.sample`, Git sẽ tự động bỏ qua file `.env`.
 
 ```bash
-# 1. Xoá file .env khỏi Git cache (nhưng giữ nguyên file trong máy tính của bạn)
-git rm --cached .env
+# Add file .env.sample sau khi cập nhật
+git add .env.sample
 
-# 2. Add và Commit sự thay đổi
-git commit -m "Xoá .env khỏi Git tracking"
+# Commit sự thay đổi
+git commit -m "chore: Cập nhật biến môi trường cần thiết vào .env.sample"
 
-# 3. Đẩy code lên GitHub
+# Đẩy code lên GitHub
 git push origin main
 ```
-Từ các lần push sau, Git sẽ tự động bỏ qua file `.env` nhờ cài đặt trong file `.gitignore`.
 
 ## Triển khai (Deployment)
 Vui lòng tham khảo file [DEPLOYMENT.md](./DEPLOYMENT.md) để biết thêm cấu hình chi tiết về cách đưa dự án lên Vercel.
