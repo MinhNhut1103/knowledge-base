@@ -8,6 +8,31 @@ Hệ thống quản lý kiến thức cá nhân (Knowledge Base) với giao di�
 - **Giao diện hiện đại:** Được thiết kế tối ưu với Tailwind CSS và các hiệu ứng mượt mà.
 - **State Management:** Quản lý state hiệu quả với Zustand.
 
+## Hướng Dẫn Sử Dụng (User Guide)
+
+### 1. Đăng nhập hệ thống
+- Mở ứng dụng, bạn sẽ thấy màn hình đăng nhập.
+- Sử dụng tài khoản đã được cấp hoặc tạo trong Supabase Authentication để đăng nhập.
+- Sau khi đăng nhập thành công, bạn sẽ được chuyển hướng đến trang quản lý chính (Dashboard).
+
+### 2. Quản lý Bài Viết / Ghi Chú (Notes/Articles)
+- **Thêm mới:** Nhấp vào nút **"Thêm mới"** (hoặc biểu tượng dấu cộng `+`) ở thanh điều hướng để mở trình soạn thảo. Nhập tiêu đề, chọn danh mục, viết nội dung và lưu lại.
+- **Chỉnh sửa:** Nhấp vào biểu tượng chỉnh sửa (cây bút) trên từng thẻ bài viết để cập nhật nội dung.
+- **Xoá:** Nhấp vào biểu tượng thùng rác trên bài viết để tuỳ chọn xoá bỏ (sẽ có hộp thoại xác nhận).
+- **Xem chi tiết:** Nhấp trực tiếp vào một thẻ (card) trên giao diện để đọc toàn bộ nội dung bài viết đó.
+
+### 3. Tìm kiếm và Lọc
+- Sử dụng **thanh tìm kiếm (Search Bar)** ở trên cùng để tìm nhanh các bài viết theo từ khoá.
+- Bạn cũng có thể **Lọc theo Danh mục (Category)** bằng cách nhấn vào các nhãn danh mục trên màn hình để hệ thống tự động lọc ra các bài viết liên quan.
+
+### 4. Quản lý Danh mục (Categories)
+- Nếu bạn có quyền hạn hoặc tuỳ chọn được hiển thị, nhấp vào **Quản lý Danh mục** (Category Manager).
+- Tại đây, bạn có thể tạo mới, chỉnh sửa tên hoặc xoá các danh mục đang có trong hệ thống để sắp xếp kiến thức logic hơn.
+
+### 5. Quản lý Thành viên (Members)
+- Nếu ứng dụng có bật tính năng hội nhóm/thành viên, bạn truy cập phần **Quản lý Thành viên** (Member Manager) để xem danh sách.
+- Tại đây bạn có thể thêm mới thành viên vào hệ thống và cấp quyền (nếu có dựa trên cấu hình database).
+
 ## Cài Đặt Khởi Tạo (Locally)
 
 ### 1. Yêu cầu hệ thống
